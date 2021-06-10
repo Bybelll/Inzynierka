@@ -6,11 +6,15 @@
              xmlns:local="clr-namespace:WorkingWithMaps"
              mc:Ignorable="d"
              x:Class="WorkingWithMaps.MainPage"
-             Title="Maps Table of Contents"
+             Title="Menu"
              Padding="10">
     <TableView Intent="Menu">
         <TableRoot>
             <TableSection>
+                <TextCell Text="Mapa"
+                          Detail="Wyświetl mapę aby wybrać samochód"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:MapPage}" />
                 <TextCell Text="Map types"
                           Detail="Display a map with zooming and different map types."
                           Command="{Binding NavigateCommand}"
@@ -39,10 +43,10 @@
                           Detail="Add a circle to a map."
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type local:CirclePage}" />
-                <TextCell Text="Geocoder demo"
+                <!--<TextCell Text="Geocoder demo"
                           Detail="Geocode and reverse geocode an address."
                           Command="{Binding NavigateCommand}"
-                          CommandParameter="{x:Type local:GeocoderPage}" />                
+                          CommandParameter="{x:Type local:GeocoderPage}" />-->                
                 <TextCell Text="Native map app"
                           Detail="Launch the platform's native map app."
                           Command="{Binding NavigateCommand}"

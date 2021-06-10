@@ -9,6 +9,7 @@ namespace WorkingWithMaps
     public partial class GeocoderPage : ContentPage
     {
         Geocoder geoCoder;
+        Position adressPin; 
 
         public GeocoderPage()
         {
@@ -24,6 +25,8 @@ namespace WorkingWithMaps
                 IEnumerable<Position> approximateLocations = await geoCoder.GetPositionsForAddressAsync(address);
                 Position position = approximateLocations.FirstOrDefault();
                 geocodedOutputLabel.Text = $"{position.Latitude}, {position.Longitude}";
+
+                adressPin = position;
             }
         }
 
@@ -43,6 +46,19 @@ namespace WorkingWithMaps
                     reverseGeocodedOutputLabel.Text = address;
                 }
             }
+        }
+
+        private void AddPin(object sender, EventArgs e)
+        {
+            Pin addPin = new Pin
+            {
+                Position = adressPin,
+                Label = "cc",
+                Address = "ccc",
+                Type = PinType.Place
+            };
+
+            
         }
     }
 }

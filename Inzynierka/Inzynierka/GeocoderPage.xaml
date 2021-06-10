@@ -12,5 +12,6 @@
 		<Entry x:Name="reverseGeocodeEntry" Text="37.8044866, -122.4324132" />
 		<Button Text="Reverse Geocode" Clicked="OnReverseGeocodeButtonClicked" />
 		<Label x:Name="reverseGeocodedOutputLabel" />
-	</StackLayout>	
+        <Button Text="Dodaj znacznik" Clicked="AddPin"/>
+    </StackLayout>	
 </ContentPage>

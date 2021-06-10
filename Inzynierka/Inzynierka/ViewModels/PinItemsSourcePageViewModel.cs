@@ -31,9 +31,7 @@ namespace WorkingWithMaps.ViewModels
 
             AddLocationCommand = new Command(AddLocation);
             RemoveLocationCommand = new Command(RemoveLocation);
-            ClearLocationsCommand = new Command(() => _locations.Clear());
-            UpdateLocationsCommand = new Command(UpdateLocations);
-            ReplaceLocationCommand = new Command(ReplaceLocation);
+
         }
 
         void AddLocation()
@@ -49,29 +47,6 @@ namespace WorkingWithMaps.ViewModels
             }
         }
 
-        void UpdateLocations()
-        {
-            if (!_locations.Any())
-            {
-                return;
-            }
-
-            double lastLatitude = _locations.Last().Position.Latitude;
-            foreach (Location location in Locations)
-            {
-                location.Position = new Position(lastLatitude, location.Position.Longitude);
-            }
-        }
-
-        void ReplaceLocation()
-        {
-            if (!_locations.Any())
-            {
-                return;
-            }
-
-            _locations[_locations.Count - 1] = NewLocation();
-        }
 
         Location NewLocation()
         {
