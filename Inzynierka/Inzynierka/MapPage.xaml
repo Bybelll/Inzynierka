@@ -29,8 +29,8 @@
                          HorizontalOptions="Center">
                 <Button Text="Zmień tryb"
                         Clicked="OnChangeModeClicked" />
-                <Button Text="Add"
-                        Command="{Binding AddLocationCommand}" />
+                <Button Text="Dodaj znacznik"
+                        Clicked="OnAddPinButtonClicked" />
                 <Button Text="Remove"
                         Command="{Binding RemoveLocationCommand}" />
 

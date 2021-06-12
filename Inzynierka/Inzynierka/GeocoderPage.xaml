@@ -5,11 +5,11 @@
              Title="Geocoder demo">
 	<StackLayout Margin="10">
 		<Label Text="Geocode:" />
-		<Entry x:Name="geocodeEntry" Text="Pacific Ave, San Francisco, California" />
+		<Entry x:Name="geocodeEntry" Text="Gdańsk, ul. Kartuska 3" />
 		<Button Text="Geocode" Clicked="OnGeocodeButtonClicked" />
 		<Label x:Name="geocodedOutputLabel" />
 		<Label Text="Reverse geocode:" />
-		<Entry x:Name="reverseGeocodeEntry" Text="37.8044866, -122.4324132" />
+        <Entry x:Name="reverseGeocodeEntry" Text="54.3520500, 18.6463700" />
 		<Button Text="Reverse Geocode" Clicked="OnReverseGeocodeButtonClicked" />
 		<Label x:Name="reverseGeocodedOutputLabel" />
         <Button Text="Dodaj znacznik" Clicked="AddPin"/>

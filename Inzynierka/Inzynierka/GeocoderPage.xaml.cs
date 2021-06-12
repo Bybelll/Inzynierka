@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using WorkingWithMaps.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
@@ -9,10 +10,12 @@ namespace WorkingWithMaps
     public partial class GeocoderPage : ContentPage
     {
         Geocoder geoCoder;
-        Position adressPin; 
+        Position adressPin;
+        PinItemsSourcePageViewModel pinViewKodelGeocoder;
 
-        public GeocoderPage()
+        public GeocoderPage(PinItemsSourcePageViewModel pinItemsSourcePageViewModel)
         {
+            pinViewKodelGeocoder = pinItemsSourcePageViewModel;
             InitializeComponent();
             geoCoder = new Geocoder();
         }
@@ -44,20 +47,16 @@ namespace WorkingWithMaps
                     IEnumerable<string> possibleAddresses = await geoCoder.GetAddressesForPositionAsync(position);
                     string address = possibleAddresses.FirstOrDefault();
                     reverseGeocodedOutputLabel.Text = address;
+
+                    adressPin = position;
                 }
             }
         }
 
         private void AddPin(object sender, EventArgs e)
         {
-            Pin addPin = new Pin
-            {
-                Position = adressPin,
-                Label = "cc",
-                Address = "ccc",
-                Type = PinType.Place
-            };
-
+            pinViewKodelGeocoder.addPin(adressPin.Latitude,adressPin.Longitude);
+            Navigation.PopAsync();
             
         }
     }

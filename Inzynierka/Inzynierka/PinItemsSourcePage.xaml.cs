@@ -16,6 +16,7 @@ namespace WorkingWithMaps
         void OnMapClicked(object sender, MapClickedEventArgs e)
         {
             System.Diagnostics.Debug.WriteLine($"MapClick: {e.Position.Latitude}, {e.Position.Longitude}");
+            
         }
     }
 }

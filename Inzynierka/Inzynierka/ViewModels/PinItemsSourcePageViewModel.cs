@@ -56,5 +56,10 @@ namespace WorkingWithMaps.ViewModels
                 $"Desc {_pinCreatedCount}", 
                 RandomPosition.Next(new Position(39.8283459, -98.5794797), 8, 19));
         }
+
+        public void addPin(double latitude, double longitude)
+        {
+            _locations.Add(new Location("1", "2", new Position(latitude, longitude)));
+        }
     }
 }
