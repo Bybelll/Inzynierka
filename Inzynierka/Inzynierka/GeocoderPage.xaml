@@ -4,13 +4,13 @@
              x:Class="WorkingWithMaps.GeocoderPage"
              Title="Geocoder demo">
 	<StackLayout Margin="10">
-		<Label Text="Geocode:" />
+		<Label Text="Wpisz adres" />
 		<Entry x:Name="geocodeEntry" Text="Gdańsk, ul. Kartuska 3" />
-		<Button Text="Geocode" Clicked="OnGeocodeButtonClicked" />
+		<Button Text="Konwertuj na współrzędne" Clicked="OnGeocodeButtonClicked" />
 		<Label x:Name="geocodedOutputLabel" />
-		<Label Text="Reverse geocode:" />
+		<Label Text="Wpisz współrzędne:" />
         <Entry x:Name="reverseGeocodeEntry" Text="54.3520500, 18.6463700" />
-		<Button Text="Reverse Geocode" Clicked="OnReverseGeocodeButtonClicked" />
+		<Button Text="Pokaż adres" Clicked="OnReverseGeocodeButtonClicked" />
 		<Label x:Name="reverseGeocodedOutputLabel" />
         <Button Text="Dodaj znacznik" Clicked="AddPin"/>
     </StackLayout>	

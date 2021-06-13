@@ -24,9 +24,9 @@ namespace WorkingWithMaps.ViewModels
         {
             _locations = new ObservableCollection<Location>()
             {
-                new Location("New York, USA", "The City That Never Sleeps", new Position(40.67, -73.94)),
-                new Location("Los Angeles, USA", "City of Angels", new Position(34.11, -118.41)),
-                new Location("San Francisco, USA", "Bay City", new Position(37.77, -122.45))
+                new Location("Forum", "Galeria", new Position(54.3488669,18.6433859)),
+                new Location("Powale Grodzkie", "Dworzec Główny", new Position(54.355476, 18.645044)),
+
             };
 
             AddLocationCommand = new Command(AddLocation);
@@ -57,9 +57,10 @@ namespace WorkingWithMaps.ViewModels
                 RandomPosition.Next(new Position(39.8283459, -98.5794797), 8, 19));
         }
 
-        public void addPin(double latitude, double longitude)
+        public void addPin(string adress,string desciption, double latitude, double longitude)
         {
-            _locations.Add(new Location("1", "2", new Position(latitude, longitude)));
+            _pinCreatedCount++;
+            _locations.Add(new Location(adress, $"Desc {_pinCreatedCount}", new Position(latitude, longitude)));
         }
     }
 }

@@ -10,8 +10,9 @@ namespace WorkingWithMaps
     public partial class GeocoderPage : ContentPage
     {
         Geocoder geoCoder;
-        Position adressPin;
+        Position pinPosition;
         PinItemsSourcePageViewModel pinViewKodelGeocoder;
+        string address;
 
         public GeocoderPage(PinItemsSourcePageViewModel pinItemsSourcePageViewModel)
         {
@@ -24,12 +25,12 @@ namespace WorkingWithMaps
         {
             if (!string.IsNullOrWhiteSpace(geocodeEntry.Text))
             {
-                string address = geocodeEntry.Text;
+                address = geocodeEntry.Text;
                 IEnumerable<Position> approximateLocations = await geoCoder.GetPositionsForAddressAsync(address);
                 Position position = approximateLocations.FirstOrDefault();
                 geocodedOutputLabel.Text = $"{position.Latitude}, {position.Longitude}";
 
-                adressPin = position;
+                pinPosition = position;
             }
         }
 
@@ -45,19 +46,19 @@ namespace WorkingWithMaps
                 {
                     Position position = new Position(latitude.Value, longitude.Value);
                     IEnumerable<string> possibleAddresses = await geoCoder.GetAddressesForPositionAsync(position);
-                    string address = possibleAddresses.FirstOrDefault();
+                    address = possibleAddresses.FirstOrDefault();
                     reverseGeocodedOutputLabel.Text = address;
 
-                    adressPin = position;
+                    pinPosition = position;
                 }
             }
         }
 
         private void AddPin(object sender, EventArgs e)
         {
-            pinViewKodelGeocoder.addPin(adressPin.Latitude,adressPin.Longitude);
+            pinViewKodelGeocoder.addPin(address, ".", pinPosition.Latitude, pinPosition.Longitude);
             Navigation.PopAsync();
-            
+
         }
     }
 }

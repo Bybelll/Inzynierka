@@ -37,7 +37,7 @@ namespace WorkingWithMaps
         {
             System.Diagnostics.Debug.WriteLine($"MapClick: {e.Position.Latitude}, {e.Position.Longitude}");
 
-            pinItemsSourcePageViewModel.addPin(e.Position.Latitude, e.Position.Longitude);
+            pinItemsSourcePageViewModel.addPin("a","s",e.Position.Latitude, e.Position.Longitude);
         }
 
         private void OnAddPinButtonClicked(object sender, EventArgs e)
