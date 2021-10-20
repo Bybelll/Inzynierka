@@ -13,6 +13,7 @@ namespace WorkingWithMaps
         Position pinPosition;
         PinItemsSourcePageViewModel pinViewKodelGeocoder;
         string address;
+        string description = ".";
 
         public GeocoderPage(PinItemsSourcePageViewModel pinItemsSourcePageViewModel)
         {
@@ -56,7 +57,11 @@ namespace WorkingWithMaps
 
         private void AddPin(object sender, EventArgs e)
         {
-            pinViewKodelGeocoder.addPin(address, ".", pinPosition.Latitude, pinPosition.Longitude);
+            if (!string.IsNullOrWhiteSpace(describeEntry.Text))
+            {
+                description = describeEntry.Text;
+            }
+            pinViewKodelGeocoder.addPin(address, description, pinPosition.Latitude, pinPosition.Longitude);
             Navigation.PopAsync();
 
         }

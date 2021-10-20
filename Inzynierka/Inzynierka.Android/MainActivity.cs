@@ -25,7 +25,7 @@ namespace WorkingWithMaps.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Xamarin.FormsMaps.Init(this, savedInstanceState);
-            LoadApplication(new App());
+            //LoadApplication(new App());
         }
 
         protected override void OnStart()

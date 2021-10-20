@@ -6,6 +6,7 @@ using Xamarin.Forms.Maps;
 using System.Windows.Input;
 using WorkingWithMaps.ViewModels;
 
+
 namespace WorkingWithMaps
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -17,6 +18,7 @@ namespace WorkingWithMaps
             InitializeComponent();
             BindingContext = pinItemsSourcePageViewModel;
             map.MoveToRegion(new MapSpan(new Position(54.3520500, 18.6463700), 0.01, 0.01));
+          
         }
 
         void OnChangeModeClicked(object sender, EventArgs e)
@@ -38,11 +40,15 @@ namespace WorkingWithMaps
             System.Diagnostics.Debug.WriteLine($"MapClick: {e.Position.Latitude}, {e.Position.Longitude}");
 
             pinItemsSourcePageViewModel.addPin("a","s",e.Position.Latitude, e.Position.Longitude);
+           
         }
 
         private void OnAddPinButtonClicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new GeocoderPage(pinItemsSourcePageViewModel));
         }
+
+
+
     }
 }

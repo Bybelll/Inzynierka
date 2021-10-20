@@ -26,7 +26,7 @@ namespace WorkingWithMaps.ViewModels
             {
                 new Location("Forum", "Galeria", new Position(54.3488669,18.6433859)),
                 new Location("Powale Grodzkie", "Dworzec Główny", new Position(54.355476, 18.645044)),
-
+                new Location("test","test",new Position(37.779167, -122.419167))
             };
 
             AddLocationCommand = new Command(AddLocation);
@@ -60,7 +60,7 @@ namespace WorkingWithMaps.ViewModels
         public void addPin(string adress,string desciption, double latitude, double longitude)
         {
             _pinCreatedCount++;
-            _locations.Add(new Location(adress, $"Desc {_pinCreatedCount}", new Position(latitude, longitude)));
+            _locations.Add(new Location(adress, desciption, new Position(latitude, longitude)));
         }
     }
 }
