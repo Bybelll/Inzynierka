@@ -4,6 +4,14 @@ using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
+using Android.Views;
+using AndroidX.AppCompat.App;
+using AndroidX.AppCompat.Widget;
+using AndroidX.Core.View;
+using AndroidX.DrawerLayout.Widget;
+using Google.Android.Material.FloatingActionButton;
+using Google.Android.Material.Navigation;
+using Google.Android.Material.Snackbar;
 
 namespace WorkingWithMaps.Droid
 {
@@ -25,7 +33,7 @@ namespace WorkingWithMaps.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Xamarin.FormsMaps.Init(this, savedInstanceState);
-            //LoadApplication(new App());
+            LoadApplication(new App());
         }
 
         protected override void OnStart()
