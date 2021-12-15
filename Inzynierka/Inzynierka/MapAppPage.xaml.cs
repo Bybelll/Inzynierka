@@ -2,7 +2,7 @@
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
-namespace WorkingWithMaps
+namespace Inzynierka
 {
     // WARNING: when adding latitude/longitude values be careful of localization.
     // European (and other countries) use a comma as the separator, which will break the request

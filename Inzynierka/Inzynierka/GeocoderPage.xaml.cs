@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using WorkingWithMaps.ViewModels;
+using Inzynierka.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
-namespace WorkingWithMaps
+namespace Inzynierka
 {
     public partial class GeocoderPage : ContentPage
     {

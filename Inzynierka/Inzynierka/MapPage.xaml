@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
-             xmlns:local="clr-namespace:WorkingWithMaps"
-             x:Class="WorkingWithMaps.MapPage"
+             xmlns:maps="clr-namespace:Inzynierka;assembly = Inzynierka "
+             xmlns:local="clr-namespace:Inzynierka.Component"
+             x:Class="Inzynierka.MapPage"
              Title="Dostępne pojazdy">
     
     <Grid Margin="10,35,10,10">
@@ -11,18 +11,19 @@
             <RowDefinition />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <maps:Map x:Name="map"
+
+        <local:CustomMap x:Name="map"
                   MapClicked="OnMapClicked"
                   ItemsSource="{Binding Locations}">
             <!-- Alternatively, set ItemTemplateSelector to MapItemTemplateSelector -->
-            <maps:Map.ItemTemplate>
+            <local:CustomMap.ItemTemplate>
                 <DataTemplate>
-                    <maps:Pin Position="{Binding Position}"
+                    <local:CustomPin Position="{Binding Position}"
                               Address="{Binding Address}"
                               Label="{Binding Description}"/>
                 </DataTemplate>
-            </maps:Map.ItemTemplate>
-        </maps:Map>
+            </local:CustomMap.ItemTemplate>
+        </local:CustomMap>
         <ScrollView Grid.Row="1"
                     Orientation="Horizontal">
             <StackLayout Orientation="Horizontal"

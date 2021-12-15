@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace WorkingWithMaps
+namespace Inzynierka
 {
     public partial class App : Application
     {

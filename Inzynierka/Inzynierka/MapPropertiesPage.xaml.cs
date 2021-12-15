@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
-namespace WorkingWithMaps
+namespace Inzynierka
 {
     public partial class MapPropertiesPage : ContentPage
     {

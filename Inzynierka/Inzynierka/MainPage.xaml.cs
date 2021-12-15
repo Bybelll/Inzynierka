@@ -2,7 +2,7 @@
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace WorkingWithMaps
+namespace Inzynierka
 {
     public partial class MainPage : ContentPage
     {

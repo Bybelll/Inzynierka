@@ -3,11 +3,13 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Forms.Maps;
+using Inzynierka.Component;
 using System.Windows.Input;
-using WorkingWithMaps.ViewModels;
+using Inzynierka.ViewModels;
 
 
-namespace WorkingWithMaps
+
+namespace Inzynierka
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MapPage : ContentPage
@@ -17,22 +19,29 @@ namespace WorkingWithMaps
         {
             InitializeComponent();
             BindingContext = pinItemsSourcePageViewModel;
-            map.MoveToRegion(new MapSpan(new Position(54.3520500, 18.6463700), 0.01, 0.01));
-          
+            // map.MoveToRegion(new MapSpan(new Position(54.3520500, 18.6463700), 0.01, 0.01));
+
+            CustomPin pin = new CustomPin
+            {
+                Type = PinType.Place,
+                Position = new Position(37.79752, -122.40183),
+                Label = "Xamarin San Francisco Office",
+                Address = "394 Pacific Ave, San Francisco CA",
+                Name = "Xamarin",
+                Url = "http://xamarin.com/about/"
+            };
+            map.CustomPins = new System.Collections.Generic.List<CustomPin> { pin };
+            map.Pins.Add(pin);
+            map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(37.79752, -122.40183), Distance.FromMiles(1.0)));
+
+
+
+
         }
 
-        void OnChangeModeClicked(object sender, EventArgs e)
+        private void OnChangeModeClicked(object sender, EventArgs e)
         {
-            Button button = sender as Button;
-
-            if(map.MapType == MapType.Street)
-            {
-                map.MapType = MapType.Hybrid;
-            }
-            else
-            {
-                map.MapType = MapType.Street;
-            }
+            map.MapType = map.MapType == MapType.Street ? MapType.Hybrid : MapType.Street;
         }
 
         void OnMapClicked(object sender, MapClickedEventArgs e)

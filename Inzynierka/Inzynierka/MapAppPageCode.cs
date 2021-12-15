@@ -2,7 +2,7 @@
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
-namespace WorkingWithMaps
+namespace Inzynierka
 {
     public class MapAppPageCode : ContentPage
     {
