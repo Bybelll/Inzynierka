@@ -18,13 +18,13 @@ namespace Inzynierka
         public MapPage()
         {
             InitializeComponent();
-            BindingContext = pinItemsSourcePageViewModel;
+            //BindingContext = pinItemsSourcePageViewModel;
             // map.MoveToRegion(new MapSpan(new Position(54.3520500, 18.6463700), 0.01, 0.01));
 
             CustomPin pin = new CustomPin
             {
                 Type = PinType.Place,
-                Position = new Position(37.79752, -122.40183),
+                Position = new Position(54.79752, 18.40183),
                 Label = "Xamarin San Francisco Office",
                 Address = "394 Pacific Ave, San Francisco CA",
                 Name = "Xamarin",
