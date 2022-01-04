@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.workingwithmaps" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.workingwithmaps" android:installLocation="internalOnly">
 	<uses-sdk android:minSdkVersion="29" android:targetSdkVersion="29" />
 	<application android:label="WorkingWithMaps.Android">
 		<meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCBriXKu0Qkxmr9JKLq3anq3oA4XYerk_k" />
