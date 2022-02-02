@@ -9,6 +9,8 @@ using Inzynierka.ViewModels;
 
 
 
+
+
 namespace Inzynierka
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -21,18 +23,23 @@ namespace Inzynierka
             //BindingContext = pinItemsSourcePageViewModel;
             // map.MoveToRegion(new MapSpan(new Position(54.3520500, 18.6463700), 0.01, 0.01));
 
+            DBConnect dBConnect = new DBConnect();
+      
+
+
             CustomPin pin = new CustomPin
             {
                 Type = PinType.Place,
                 Position = new Position(54.79752, 18.40183),
-                Label = "Xamarin San Francisco Office",
-                Address = "394 Pacific Ave, San Francisco CA",
+                Label = "Przykładowa pinezka",
+                Address = "Władysławowo, Starowiejska 4",
                 Name = "Xamarin",
                 Url = "http://xamarin.com/about/"
             };
             map.CustomPins = new System.Collections.Generic.List<CustomPin> { pin };
             map.Pins.Add(pin);
-            map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(37.79752, -122.40183), Distance.FromMiles(1.0)));
+            Console.WriteLine("Pin added");
+            map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(54.79752, 18.40183), Distance.FromMiles(1.0)));
 
 
 

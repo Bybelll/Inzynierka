@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Inzynierka.App">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Inzynierka.DBConnect">
+    <Position X="5.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEQBAAAABAAAAAQAAAAAAAAAAAgAAAAI=</HashCode>
+      <FileName>DBConnect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Inzynierka.GeocoderPage">
+    <Position X="5.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAABAQEAIAAAIAAAAAIAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>GeocoderPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Inzynierka.MapAppPageCode">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapAppPageCode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Inzynierka.MapPage">
+    <Position X="2.5" Y="1.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABACAAAQAAAAACAA=</HashCode>
+      <FileName>MapPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Inzynierka.MapPropertiesPage" Collapsed="true">
+    <Position X="10.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>MapPropertiesPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Inzynierka.Component.CustomMap">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Component\CustomMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Inzynierka.Component.CustomPin">
+    <Position X="10.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Component\CustonPin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Inzynierka.ViewModels.Location" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAgAAAAAAAAgAAAAAACAAAAgAAAAAA=</HashCode>
+      <FileName>ViewModels\Location.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Inzynierka.ViewModels.PinItemsSourcePageViewModel">
+    <Position X="2.25" Y="4.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAUAAIAAAgQAAAAIAIAAEACAIAAAAAAAAAIAAAEAAA=</HashCode>
+      <FileName>ViewModels\PinItemsSourcePageViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

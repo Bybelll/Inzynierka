@@ -1,8 +1,7 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
-namespace Inzynierka
-{
+namespace Inzynierka{
     public class GeocoderPageCode : ContentPage
     {
         Geocoder geoCoder;
