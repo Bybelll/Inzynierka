@@ -82,9 +82,47 @@ namespace Inzynierka
             }
         }
 
-        public void Insert()
+        public void InsertUsers(string name,string surname,int age,bool status,string login,string password)
         {
-            string query = "INSERT INTO tableinfo (name, age) VALUES('John Smith', '33')";
+            string query = "INSERT INTO Users (Name,Surname,Age,Status,Login,Password) VALUES" +
+                "("+age+","+surname+","+age+","+status+","+login+","+password+")";
+
+            //open connection
+            if (this.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                //Execute command
+                cmd.ExecuteNonQuery();
+
+                //close connection
+                this.CloseConnection();
+            }
+        }
+
+        public void InsertVehicles(string type,double cost,bool availability,bool damage,double latitude, double longitude)
+        {
+            string query = "INSERT INTO Vehicles (Type, Cost, Availability, Damage, Lalitude, Longitude ) VALUES" +
+                "("+type+"," + cost + "," +availability + "," +damage + "," +latitude + "," +longitude+")";
+
+            //open connection
+            if (this.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                //Execute command
+                cmd.ExecuteNonQuery();
+
+                //close connection
+                this.CloseConnection();
+            }
+        }
+        public void InsertRental(int usersID, int vehiclesID, DateTime rentalTime,DateTime returnTime, double startPointLatitude,double startPointLonditude, double finishPointLatitude, double finishPointLongitude, double totalCost )
+        {
+            string query = "INSERT INTO Vehicles (Type, Cost, Availability, Damage, Lalitude, Longitude ) VALUES" +
+              "(" + usersID + "," + vehiclesID + "," + rentalTime + "," + returnTime + "," + startPointLatitude + "," + startPointLonditude + "," + finishPointLatitude + "," + finishPointLongitude + "," + totalCost+")";
 
             //open connection
             if (this.OpenConnection() == true)
@@ -103,37 +141,37 @@ namespace Inzynierka
         //Update statement
         public void Update()
         {
-            string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
+            //string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
 
-            //Open connection
-            if (this.OpenConnection() == true)
-            {
-                //create mysql command
-                MySqlCommand cmd = new MySqlCommand();
-                //Assign the query using CommandText
-                cmd.CommandText = query;
-                //Assign the connection using Connection
-                cmd.Connection = connection;
+            ////Open connection
+            //if (this.OpenConnection() == true)
+            //{
+            //    //create mysql command
+            //    MySqlCommand cmd = new MySqlCommand();
+            //    //Assign the query using CommandText
+            //    cmd.CommandText = query;
+            //    //Assign the connection using Connection
+            //    cmd.Connection = connection;
 
-                //Execute query
-                cmd.ExecuteNonQuery();
+            //    //Execute query
+            //    cmd.ExecuteNonQuery();
 
-                //close connection
-                this.CloseConnection();
-            }
+            //    //close connection
+            //    this.CloseConnection();
+            //}
         }
 
         //Delete statement
-        public void Delete()
+        public void DeleteUsers(string login)
         {
-            string query = "DELETE FROM tableinfo WHERE name='John Smith'";
+            string query = "DELETE FROM Users WHERE Login =" + login;
 
-            if (this.OpenConnection() == true)
-            {
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
-                this.CloseConnection();
-            }
+            //if (this.OpenConnection() == true)
+            //{
+            //    MySqlCommand cmd = new MySqlCommand(query, connection);
+            //    cmd.ExecuteNonQuery();
+            //    this.CloseConnection();
+            //}
         }
 
         //Select statement
