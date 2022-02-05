@@ -30,7 +30,9 @@ namespace Inzynierka
             try
             {
                 // open a connection asynchronously
-                MySqlConnection connection = new MySqlConnection(builder.ConnectionString);
+                connection = new MySqlConnection(builder.ConnectionString);
+                InsertRental(1, 1,DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), 54.0, 18.0, 54.1, 18.5, 13.5);
+
             }
             catch (Exception ex)
             {
@@ -82,10 +84,10 @@ namespace Inzynierka
             }
         }
 
-        public void InsertUsers(string name,string surname,int age,bool status,string login,string password)
+        public void InsertUsers(string name,string surname,int age,byte status,string login,string password)
         {
-            string query = "INSERT INTO Users (Name,Surname,Age,Status,Login,Password) VALUES" +
-                "("+age+","+surname+","+age+","+status+","+login+","+password+")";
+            string query = "INSERT INTO Users (ID,Name,Surname,Age,Status,Login,Password) VALUES" +
+                "(NULL,'"+name+"','"+surname+"','"+age+"','"+status+"','"+login+"','"+password+"')";
 
             //open connection
             if (this.OpenConnection() == true)
@@ -101,10 +103,10 @@ namespace Inzynierka
             }
         }
 
-        public void InsertVehicles(string type,double cost,bool availability,bool damage,double latitude, double longitude)
+        public void InsertVehicles(string type,double cost,byte availability,byte damage,double latitude, double longitude)
         {
-            string query = "INSERT INTO Vehicles (Type, Cost, Availability, Damage, Lalitude, Longitude ) VALUES" +
-                "("+type+"," + cost + "," +availability + "," +damage + "," +latitude + "," +longitude+")";
+            string query = "INSERT INTO Vehicles (ID,Type, Cost, Availability, Damage, Latitude, Longitude ) VALUES" +
+                "(NULL,'"+type+"','" + cost + "','" +availability + "','" +damage + "','" +latitude + "','" +longitude+"')";
 
             //open connection
             if (this.OpenConnection() == true)
@@ -119,10 +121,13 @@ namespace Inzynierka
                 this.CloseConnection();
             }
         }
-        public void InsertRental(int usersID, int vehiclesID, DateTime rentalTime,DateTime returnTime, double startPointLatitude,double startPointLonditude, double finishPointLatitude, double finishPointLongitude, double totalCost )
+        
+        public void InsertRental(int usersID, int vehiclesID, string rentalTime,string returnTime, double startPointLatitude,double startPointLonditude, double finishPointLatitude, double finishPointLongitude, double totalCost )
         {
-            string query = "INSERT INTO Vehicles (Type, Cost, Availability, Damage, Lalitude, Longitude ) VALUES" +
-              "(" + usersID + "," + vehiclesID + "," + rentalTime + "," + returnTime + "," + startPointLatitude + "," + startPointLonditude + "," + finishPointLatitude + "," + finishPointLongitude + "," + totalCost+")";
+            //for RentalTime and Return time use function DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+
+            string query = "INSERT INTO Rental (ID, UsersID, VehiclesID, RentalTime, ReturnTime, StartingPointLatitute, StartingPointLongitute, FinishPointLatitute, FinishPointLongitute, TotalCost ) VALUES" +
+              "(NULL,'" + usersID + "','" + vehiclesID + "','" + rentalTime + "','" + returnTime + "','" + startPointLatitude + "','" + startPointLonditude + "','" + finishPointLatitude + "','" + finishPointLongitude + "','" + totalCost+"')";
 
             //open connection
             if (this.OpenConnection() == true)
