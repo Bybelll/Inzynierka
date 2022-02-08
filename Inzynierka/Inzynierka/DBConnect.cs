@@ -1,6 +1,7 @@
 ﻿using MySqlConnector;
 using System;
 using System.Collections.Generic;
+using Inzynierka.ViewModels.Component;
 
 namespace Inzynierka
 {
@@ -31,8 +32,7 @@ namespace Inzynierka
             {
                 // open a connection asynchronously
                 connection = new MySqlConnection(builder.ConnectionString);
-                InsertRental(1, 1,DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), 54.0, 18.0, 54.1, 18.5, 13.5);
-
+                
             }
             catch (Exception ex)
             {
@@ -180,15 +180,13 @@ namespace Inzynierka
         }
 
         //Select statement
-        public List<string>[] Select()
+        public List<Vehicle> Select()
         {
-            string query = "SELECT * FROM tableinfo";
+            string query = "SELECT * FROM Vehicles";
 
             //Create a list to store the result
-            List<string>[] list = new List<string>[3];
-            list[0] = new List<string>();
-            list[1] = new List<string>();
-            list[2] = new List<string>();
+            List<Vehicle> list = new List<Vehicle>();
+
 
             //Open connection
             if (this.OpenConnection() == true)
@@ -201,9 +199,10 @@ namespace Inzynierka
                 //Read the data and store them in the list
                 while (dataReader.Read())
                 {
-                    list[0].Add(dataReader["id"] + "");
-                    list[1].Add(dataReader["name"] + "");
-                    list[2].Add(dataReader["age"] + "");
+                    Console.WriteLine(dataReader.ToString());
+                   Vehicle vehicle = new Vehicle(dataReader.GetInt32("ID"), dataReader.GetString("Type"),dataReader.GetDouble("Cost"), dataReader.GetByte("Availability"), dataReader.GetByte("Damage"),dataReader.GetDouble("Latitude"), dataReader.GetDouble("Longitude"));
+                    list.Add(vehicle);
+
                 }
 
                 //close Data Reader
