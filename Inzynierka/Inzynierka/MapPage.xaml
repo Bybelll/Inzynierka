@@ -16,13 +16,13 @@
                   MapClicked="OnMapClicked"
                   ItemsSource="{Binding Locations}">
             <!-- Alternatively, set ItemTemplateSelector to MapItemTemplateSelector -->
-            <local:CustomMap.ItemTemplate>
+            <!--<local:CustomMap.ItemTemplate>
                 <DataTemplate>
-                    <local:CustomPin Position="{Binding Position}"
+                    <local:Vehicle Position="{Binding Position}"
                               Address="{Binding Address}"
                               Label="{Binding Description}"/>
                 </DataTemplate>
-            </local:CustomMap.ItemTemplate>
+            </local:CustomMap.ItemTemplate>-->
         </local:CustomMap>
         <ScrollView Grid.Row="1"
                     Orientation="Horizontal">

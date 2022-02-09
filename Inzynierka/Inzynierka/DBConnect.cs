@@ -1,7 +1,7 @@
 ﻿using MySqlConnector;
 using System;
 using System.Collections.Generic;
-using Inzynierka.ViewModels.Component;
+using Inzynierka.Component;
 
 namespace Inzynierka
 {
@@ -199,7 +199,6 @@ namespace Inzynierka
                 //Read the data and store them in the list
                 while (dataReader.Read())
                 {
-                    Console.WriteLine(dataReader.ToString());
                    Vehicle vehicle = new Vehicle(dataReader.GetInt32("ID"), dataReader.GetString("Type"),dataReader.GetDouble("Cost"), dataReader.GetByte("Availability"), dataReader.GetByte("Damage"),dataReader.GetDouble("Latitude"), dataReader.GetDouble("Longitude"));
                     list.Add(vehicle);
 

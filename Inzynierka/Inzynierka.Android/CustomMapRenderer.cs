@@ -16,7 +16,7 @@ namespace Inzynierka.Droid
 {
     public class CustomMapRenderer : MapRenderer, GoogleMap.IInfoWindowAdapter
     {
-        List<CustomPin> customPins;
+        List<Vehicle> vehicles;
 
         public CustomMapRenderer(Context context) : base(context)
         {
@@ -34,7 +34,7 @@ namespace Inzynierka.Droid
             if (e.NewElement != null)
             {
                 var formsMap = (CustomMap)e.NewElement;
-                customPins = formsMap.CustomPins;
+                vehicles = formsMap.CustomPins;
             }
         }
 
@@ -64,13 +64,13 @@ namespace Inzynierka.Droid
                 throw new Exception("Custom pin not found");
             }
 
-            if (!string.IsNullOrWhiteSpace(customPin.Url))
-            {
-                var url = Android.Net.Uri.Parse(customPin.Url);
-                var intent = new Intent(Intent.ActionView, url);
-                intent.AddFlags(ActivityFlags.NewTask);
-                Android.App.Application.Context.StartActivity(intent);
-            }
+            //if (!string.IsNullOrWhiteSpace(customPin.Url))
+            //{
+            //    var url = Android.Net.Uri.Parse(customPin.Url);
+            //    var intent = new Intent(Intent.ActionView, url);
+            //    intent.AddFlags(ActivityFlags.NewTask);
+            //    Android.App.Application.Context.StartActivity(intent);
+            //}
         }
 
         public Android.Views.View GetInfoContents(Marker marker)
@@ -86,7 +86,7 @@ namespace Inzynierka.Droid
                     throw new Exception("Custom pin not found");
                 }
 
-                if (customPin.Name.Equals("Xamarin"))
+                if (customPin.Type.Equals("Xamarin"))
                 {
                     view = inflater.Inflate(Resource.Layout.XamarinMapInfoWindow, null);
                 }
@@ -117,10 +117,10 @@ namespace Inzynierka.Droid
             return null;
         }
 
-        CustomPin GetCustomPin(Marker annotation)
+        Vehicle GetCustomPin(Marker annotation)
         {
             var position = new Position(annotation.Position.Latitude, annotation.Position.Longitude);
-            foreach (var pin in customPins)
+            foreach (var pin in vehicles)
             {
                 if (pin.Position == position)
                 {

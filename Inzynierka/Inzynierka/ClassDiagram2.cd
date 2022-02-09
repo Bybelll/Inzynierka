@@ -10,7 +10,7 @@
   <Class Name="Inzynierka.DBConnect">
     <Position X="5.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAEQBAAAABAAAAAQAAAAAAAAAAAgAAAAI=</HashCode>
+      <HashCode>AAQAAAAAAAAAAQAAAAABABEAAwAAAAAAgAAAQAAAIAA=</HashCode>
       <FileName>DBConnect.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -49,11 +49,11 @@
       <FileName>ViewModels\Component\CustomMap.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Inzynierka.Component.CustomPin">
+  <Class Name="Inzynierka.Component.Vehicle">
     <Position X="10.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAACAAAAAAAAAA=</HashCode>
-      <FileName>ViewModels\Component\CustonPin.cs</FileName>
+      <HashCode>AAAAQAAAAAAAgAAAAAAAAAAACQARAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>ViewModels\Component\Vehicle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Inzynierka.ViewModels.Location" BaseTypeListCollapsed="true">

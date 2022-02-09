@@ -20,26 +20,17 @@ namespace Inzynierka
         public MapPage()
         {
             InitializeComponent();
-            BindingContext = pinItemsSourcePageViewModel;
-            map.MoveToRegion(new MapSpan(new Position(54.3520500, 18.6463700), 0.01, 0.01));
+            //BindingContext = pinItemsSourcePageViewModel;
+            //map.MoveToRegion(new MapSpan(new Position(54.3520500, 18.6463700), 0.01, 0.01));
 
             DBConnect dBConnect = new DBConnect();
-            dBConnect.Select();
 
-
-            //CustomPin pin = new CustomPin
-            //{
-            //    Type = PinType.Place,
-            //    Position = new Position(54.79752, 18.40183),
-            //    Label = "Przykładowa pinezka",
-            //    Address = "Władysławowo, Starowiejska 4",
-            //    Name = "Xamarin",
-            //    Url = "http://xamarin.com/about/"
-            //};
-            //map.CustomPins = new System.Collections.Generic.List<CustomPin> { pin };
-            //map.Pins.Add(pin);
-            //Console.WriteLine("Pin added");
-            //map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(54.79752, 18.40183), Distance.FromMiles(1.0)));
+            map.CustomPins = dBConnect.Select();
+            foreach (Vehicle a in map.CustomPins)
+            {
+                map.Pins.Add(a);
+            }
+            map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(54 ,18), Distance.FromMiles(1.0)));
 
 
 
