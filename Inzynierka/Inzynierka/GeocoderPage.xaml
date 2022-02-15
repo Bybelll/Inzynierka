@@ -3,17 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Inzynierka.GeocoderPage"
              Title="Dane znacznika">
-	<StackLayout Margin="10">
-		<Label Text="Wpisz adres" />
-		<Entry x:Name="geocodeEntry" Text="Gdańsk, ul. Kartuska 3" />
-		<Button Text="Konwertuj na współrzędne" Clicked="OnGeocodeButtonClicked" />
-		<Label x:Name="geocodedOutputLabel" />
-		<Label Text="Wpisz współrzędne:" />
-        <Entry x:Name="reverseGeocodeEntry" Text="54.3520500, 18.6463700" />
-		<Button Text="Pokaż adres" Clicked="OnReverseGeocodeButtonClicked" />
-		<Label x:Name="reverseGeocodedOutputLabel" />
-        <Label Text="Wpisz opis:" />
-        <Entry x:Name="describeEntry" Text="Wpisz opis" />
-        <Button Text="Dodaj znacznik" Clicked="AddPin"/>
-    </StackLayout>	
+    <ScrollView>
+	   <StackLayout Margin="10">
+		    <Label Text="Wpisz adres" />
+		    <Entry x:Name="geocodeEntry" Text="Gdańsk, ul. Kartuska 3" />
+		    <Button Text="Konwertuj na współrzędne" Clicked="OnGeocodeButtonClicked" />
+		    <Label x:Name="geocodedOutputLabel" />
+		    <Label Text="Wpisz współrzędne:" />
+            <Entry x:Name="reverseGeocodeEntry" Text="54.3520500, 18.6463700" />
+		    <Button Text="Pokaż adres" Clicked="OnReverseGeocodeButtonClicked" />
+		    <Label x:Name="reverseGeocodedOutputLabel" />
+
+            <Entry x:Name="typeVehicle" Text="typ pojazdu" />
+            <Entry x:Name="costVehicle" Text="koszt" />
+            <Entry x:Name="availabilityVehicle" Text="dostepnosc" />
+            <Entry x:Name="damageVehicle" Text="uszkodzony" />
+            <Entry x:Name="latitudeVehicle" Text="szerokość geogr" />
+            <Entry x:Name="longitudeVehicle" Text="gługość geogr" />
+            
+            <Entry x:Name="describeEntry" Text="Wpisz opis" />
+            <Button Text="Dodaj znacznik" Clicked="AddPin"/>
+        </StackLayout>
+    </ScrollView>
+    
 </ContentPage>
+

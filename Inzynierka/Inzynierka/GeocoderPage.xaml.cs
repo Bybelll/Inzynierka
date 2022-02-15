@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Inzynierka.ViewModels;
+using Inzynierka.Component;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
@@ -57,11 +58,20 @@ namespace Inzynierka
 
         private void AddPin(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(describeEntry.Text))
+            //TO DO warunki i sprawdzenia
+            if (!string.IsNullOrWhiteSpace(describeEntry.Text) && !string.IsNullOrWhiteSpace(typeVehicle.Text) && !string.IsNullOrWhiteSpace(costVehicle.Text)
+                && !string.IsNullOrWhiteSpace(availabilityVehicle.Text))
             {
-                description = describeEntry.Text;
+                double? cost = Convert.ToDouble(costVehicle.Text);
+                byte? availability = Convert.ToByte(damageVehicle.Text);
+                byte? damage = Convert.ToByte(damageVehicle.Text);
+                double? latitude = Convert.ToDouble(latitudeVehicle.Text);
+                double? longitude = Convert.ToDouble(longitudeVehicle.Text);
+
+                DBConnect dBConnect = new DBConnect();
+                dBConnect.InsertVehicles(typeVehicle.Text, cost.Value, availability.Value, damage.Value, latitude.Value, longitude.Value);
             }
-            pinViewKodelGeocoder.addPin(address, description, pinPosition.Latitude, pinPosition.Longitude);
+            
             Navigation.PopAsync();
 
         }

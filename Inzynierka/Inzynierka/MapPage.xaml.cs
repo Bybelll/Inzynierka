@@ -1,14 +1,9 @@
 ﻿using System;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Forms.Maps;
 using Inzynierka.Component;
-using System.Windows.Input;
 using Inzynierka.ViewModels;
-
-
-
 
 
 namespace Inzynierka
@@ -20,19 +15,8 @@ namespace Inzynierka
         public MapPage()
         {
             InitializeComponent();
-            //BindingContext = pinItemsSourcePageViewModel;
-            //map.MoveToRegion(new MapSpan(new Position(54.3520500, 18.6463700), 0.01, 0.01));
-
-            DBConnect dBConnect = new DBConnect();
-
-            map.CustomPins = dBConnect.Select();
-            foreach (Vehicle a in map.CustomPins)
-            {
-                map.Pins.Add(a);
-            }
-            map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(54 ,18), Distance.FromMiles(1.0)));
-
-
+            addPinsToMap();
+            map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(54.3514759094602, 18.6458255723119), Distance.FromMiles(1.0)));
 
 
         }
@@ -46,15 +30,26 @@ namespace Inzynierka
         {
             System.Diagnostics.Debug.WriteLine($"MapClick: {e.Position.Latitude}, {e.Position.Longitude}");
 
-            pinItemsSourcePageViewModel.addPin("a","s",e.Position.Latitude, e.Position.Longitude);
-           
+            //pinItemsSourcePageViewModel.addPin("a","s",e.Position.Latitude, e.Position.Longitude);
+
         }
 
         private void OnAddPinButtonClicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new GeocoderPage(pinItemsSourcePageViewModel));
+            
         }
 
+        private void addPinsToMap()
+        {
+            pinItemsSourcePageViewModel = new PinItemsSourcePageViewModel();
+            map.CustomPins = pinItemsSourcePageViewModel.vehicles;
+            foreach (Vehicle a in map.CustomPins)
+            {
+                map.Pins.Add(a);
+            }
+            
+        }
 
 
     }
