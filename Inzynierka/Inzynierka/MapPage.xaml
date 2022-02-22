@@ -32,8 +32,10 @@
                         Clicked="OnChangeModeClicked" />
                 <Button Text="Dodaj znacznik"
                         Clicked="OnAddPinButtonClicked" />
-                <Button Text="Usuń znacznik"
-                        Command="{Binding RemoveLocationCommand}" />
+                <!--<Button Text="Usuń znacznik"
+                        Command="{Binding RemoveLocationCommand}" />-->
+                <Button Text="Zaloguj"
+                        Clicked="OnSingInButtonClicked"/>
 
 
             </StackLayout>

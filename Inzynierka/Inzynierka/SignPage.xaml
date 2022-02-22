@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inzynierka.SignPage">
+             
+    <ScrollView>
+        <StackLayout Orientation="Vertical">
+            <Button x:Name="SignInButton"
+                    Text="Zaloguj"
+                    Clicked="OnSignInButtonClicked"/>
+            <Label  x:Name="labil"
+                    Text="Jeśli nie masz konta, załóż konto." />
+            <Button x:Name="SignUpButton"
+                    Text="Załóż konto"
+                    Clicked="OnCreateAccauntButtonCLicked"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

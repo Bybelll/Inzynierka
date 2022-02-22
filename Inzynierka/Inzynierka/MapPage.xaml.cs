@@ -52,5 +52,9 @@ namespace Inzynierka
         }
 
 
+        private void OnSingInButtonClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SignPage());
+        }
     }
 }

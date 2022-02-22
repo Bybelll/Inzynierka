@@ -67,7 +67,7 @@ namespace Inzynierka
                 byte? damage = Convert.ToByte(damageVehicle.Text);
                 double? latitude = Convert.ToDouble(latitudeVehicle.Text);
                 double? longitude = Convert.ToDouble(longitudeVehicle.Text);
-
+                
                 DBConnect dBConnect = new DBConnect();
                 dBConnect.InsertVehicles(typeVehicle.Text, cost.Value, availability.Value, damage.Value, latitude.Value, longitude.Value);
             }
