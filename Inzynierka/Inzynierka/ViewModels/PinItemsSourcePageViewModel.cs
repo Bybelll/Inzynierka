@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.ObjectModel;
-using System.Linq;
-using Inzynierka.Component;
+﻿using Inzynierka.Component;
 using System.Collections.Generic;
 
 namespace Inzynierka.ViewModels

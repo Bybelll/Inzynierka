@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -24,12 +19,14 @@ namespace Inzynierka
             if (passwordEntry.Text == repeatPasswordEntry.Text)
             {
                 dBConnect.InsertUsers(nameEntry.Text, surmnameEntry.Text, (int)ageSlider.Value, 0, loginEntry.Text, passwordEntry.Text);
+                Navigation.PopAsync();
             }
             else
             {
                 Console.WriteLine("Passwords do not match");
+                passwordIncorectLabel.Text = "Hasła nie są identyczne.";
             }
-            Navigation.PopAsync();
+            
         }
     }
 }

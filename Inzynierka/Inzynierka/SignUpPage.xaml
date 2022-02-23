@@ -16,8 +16,9 @@
                     Path=Value,
                     StringFormat='Wiek: {0:F0}'}"/>
 
-            <Button Text="Załóż konto"
+            <Button Text="Załóż konto"                   
                     Clicked="OnSignUpButtonClicked"/>
+            <Label x:Name="passwordIncorectLabel"/>
         </StackLayout>
 
     </ScrollView>
