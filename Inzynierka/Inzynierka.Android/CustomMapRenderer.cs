@@ -83,12 +83,18 @@ namespace Inzynierka.Droid
                 var customPin = GetCustomPin(marker);
                 if (customPin == null)
                 {
+                    
                     throw new Exception("Custom pin not found");
                 }
-
-                if (customPin.Type.Equals("Xamarin"))
+                
+                if (customPin.type.Equals("rower"))
                 {
-                    view = inflater.Inflate(Resource.Layout.XamarinMapInfoWindow, null);
+                    view = inflater.Inflate(Resource.Layout.BikeInfoWindow, null);
+                }
+                else if (customPin.type.Equals("hulajnoga"))
+                {
+                    
+                    view = inflater.Inflate(Resource.Layout.ScooterInfoWindow, null);
                 }
                 else
                 {

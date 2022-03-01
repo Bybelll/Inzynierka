@@ -17,7 +17,7 @@
             android:id="@+id/InfoWindowTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="InfoWindowTitle"
+            android:text="hulajnoga"
             android:textColor="@android:color/black"
             android:textStyle="bold" />
         <TextView
@@ -26,7 +26,6 @@
             android:layout_height="wrap_content"
             android:text="InfoWindowSubtitle"
             android:textColor="@android:color/black" />
-
     </LinearLayout>
     <ImageButton
         android:id="@+id/InfoWindowButton"
