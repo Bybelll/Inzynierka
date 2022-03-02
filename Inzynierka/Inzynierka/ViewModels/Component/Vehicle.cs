@@ -9,7 +9,6 @@ namespace Inzynierka.Component
 
         private int id { get; set; }
         public string type { get; set; }
-        //private string type { get; set; }
         private double cost { get; set; }
         private byte availability { get; set; }
         private byte damage { get; set; }
@@ -38,7 +37,7 @@ namespace Inzynierka.Component
             Label = address;
         }
 
-
+        
 
     }
 }
