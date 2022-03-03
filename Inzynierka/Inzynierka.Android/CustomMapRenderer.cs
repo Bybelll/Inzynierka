@@ -100,18 +100,21 @@ namespace Inzynierka.Droid
                 {
                     view = inflater.Inflate(Resource.Layout.MapInfoWindow, null);
                 }
-
+                var infoAdress = view.FindViewById<TextView>(Resource.Id.InfoWindowAdress);
                 var infoTitle = view.FindViewById<TextView>(Resource.Id.InfoWindowTitle);
                 var infoSubtitle = view.FindViewById<TextView>(Resource.Id.InfoWindowSubtitle);
 
-                if (infoTitle != null)
-                {
-                    infoTitle.Text = marker.Title;
-                }
-                if (infoSubtitle != null)
-                {
-                    infoSubtitle.Text = marker.Snippet;
-                }
+                view.FindViewById<TextView>(Resource.Id.InfoWindowCost).Text = "Opłaty: " + customPin.cost + " zł/min";
+                view.FindViewById<TextView>(Resource.Id.InfoWindowIDVehicle).Text = "Nr pojazdu: " + customPin.id.ToString();
+                infoAdress.Text = "Adres: " + marker.Title;
+                //if (infoTitle != null)
+                //{
+                //    infoTitle.Text = marker.Title;
+                //}
+                //if (infoSubtitle != null)
+                //{
+                //    infoSubtitle.Text = marker.Snippet;
+                //}
 
                 return view;
             }

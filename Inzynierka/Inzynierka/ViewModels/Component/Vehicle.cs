@@ -7,11 +7,11 @@ namespace Inzynierka.Component
     public class Vehicle : Pin
     {
 
-        private int id { get; set; }
+        public int id { get; set; }
         public string type { get; set; }
-        private double cost { get; set; }
-        private byte availability { get; set; }
-        private byte damage { get; set; }
+        public double cost { get; set; }
+        public byte availability { get; set; }
+        public byte damage { get; set; }
         
 
 

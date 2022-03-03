@@ -28,10 +28,7 @@ namespace Inzynierka
 
         void OnMapClicked(object sender, MapClickedEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine($"MapClick: {e.Position.Latitude}, {e.Position.Longitude}");
-
-            //pinItemsSourcePageViewModel.addPin("a","s",e.Position.Latitude, e.Position.Longitude);
-
+            System.Diagnostics.Debug.WriteLine($"MapClick: {e.Position.Latitude}, {e.Position.Longitude}");       
         }
 
         private void OnAddPinButtonClicked(object sender, EventArgs e)

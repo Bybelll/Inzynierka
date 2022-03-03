@@ -4,11 +4,11 @@
              x:Class="Inzynierka.SignUpPage">
     <ScrollView>
         <StackLayout>
-            <Entry x:Name="loginEntry" Text="login"/>
-            <Entry x:Name="passwordEntry"   Text="password" IsPassword="True"/>
-            <Entry x:Name="repeatPasswordEntry" Text="repeatPassword" IsPassword="True"/>
-            <Entry x:Name="nameEntry" Text="name"/>
-            <Entry x:Name="surmnameEntry" Text="surname"/>
+            <Entry x:Name="loginEntry" Placeholder="Login"/>
+            <Entry x:Name="passwordEntry"   Placeholder="Hasło" IsPassword="True"/>
+            <Entry x:Name="repeatPasswordEntry" Placeholder="Powtórz hasło" IsPassword="True"/>
+            <Entry x:Name="nameEntry" Placeholder="Imię"/>
+            <Entry x:Name="surmnameEntry" Placeholder="Nazwisko"/>
             
             <Slider x:Name="ageSlider"
                     Minimum="0" Maximum="100" />

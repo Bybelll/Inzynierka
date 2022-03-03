@@ -6,13 +6,16 @@ using Android.OS;
 using Android.Runtime;
 
 
+
+
 namespace Inzynierka.Droid
 {
     [Activity(Label = "Inzynierka", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         const int RequestLocationId = 0;
-
+        
+        
         readonly string[] LocationPermissions =
         {
             Manifest.Permission.AccessCoarseLocation,
@@ -22,11 +25,12 @@ namespace Inzynierka.Droid
         protected override async void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Xamarin.FormsMaps.Init(this, savedInstanceState);
             LoadApplication(new App());
+            
         }
 
         protected override void OnStart()

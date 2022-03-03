@@ -2,12 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="vertical">
+    
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:src="@drawable/monkey" />
+        android:src="@drawable/bike" />
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,24 +18,32 @@
             android:id="@+id/InfoWindowTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bike"
+            android:text="Rower"
             android:textColor="@android:color/black"
             android:textStyle="bold" />
         <TextView
-            android:id="@+id/InfoWindowSubtitle"
+            android:id="@+id/InfoWindowIDVehicle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="InfoWindowSubtitle"
+            android:text="Nr pojazdu: "
             android:textColor="@android:color/black" />
         <TextView
+            android:id="@+id/InfoWindowAdress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bike"
+            android:text="Adress:"
             android:textColor="@android:color/black" />
+        <TextView
+            android:id="@+id/InfoWindowCost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Opłaty:"
+            android:textColor="@android:color/black"/>
+        
     </LinearLayout>
     <ImageButton
         android:id="@+id/InfoWindowButton"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:src="@drawable/info" />
+        android:src="@drawable/rezerwuj" />
 </LinearLayout>

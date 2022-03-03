@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
+
 namespace Inzynierka
 {
     public partial class SignPage : ContentPage
