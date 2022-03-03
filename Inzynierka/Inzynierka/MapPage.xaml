@@ -31,11 +31,17 @@
                 <Button Text="Zmień tryb"
                         Clicked="OnChangeModeClicked" />
                 <Button Text="Dodaj znacznik"
-                        Clicked="OnAddPinButtonClicked" />
+                        Clicked="OnAddPinButtonClicked" 
+                        IsVisible="true"/>
+                <Button Text="Moje konto"
+                        Clicked="OnMyAccountButtonClicked"
+                        IsVisible="true"/>
+
                 <!--<Button Text="Usuń znacznik"
                         Command="{Binding RemoveLocationCommand}" />-->
                 <Button Text="Zaloguj"
-                        Clicked="OnSingInButtonClicked"/>
+                        Clicked="OnSingInButtonClicked"
+                        IsVisible="true"/>
 
 
             </StackLayout>

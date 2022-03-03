@@ -53,5 +53,10 @@ namespace Inzynierka
         {
             Navigation.PushAsync(new SignPage());
         }
+
+        private void OnMyAccountButtonClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MyAccount());
+        }
     }
 }

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inzynierka.MyAccount">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Button Text="Historia wypożyczeń"
+                    Clicked="OnRentHistoryButtonCLicked"/>
+            <Button Text="Moje dane"
+                    Clicked="OnMyDataButtonCLicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
