@@ -42,6 +42,9 @@
                 <Button Text="Zaloguj"
                         Clicked="OnSingInButtonClicked"
                         IsVisible="true"/>
+                <Button Text="Podsumowanie"
+                        Clicked="OnPodsumowanieClicked"
+                        IsVisible="true"/>
 
 
             </StackLayout>

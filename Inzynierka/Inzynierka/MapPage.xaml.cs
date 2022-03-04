@@ -58,5 +58,10 @@ namespace Inzynierka
         {
             Navigation.PushAsync(new MyAccount());
         }
+
+        private void OnPodsumowanieClicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

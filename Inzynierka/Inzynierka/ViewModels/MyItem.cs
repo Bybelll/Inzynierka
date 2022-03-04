@@ -22,21 +22,27 @@ public class MyItem : INotifyPropertyChanged
         }
 
     }
-    public int Addend1 { get; set; }
-    public int Addend2 { get; set; }
-    public int Result
-    {
-        get
-        {
-            return Addend1 + Addend2;
-        }
-    }
-    public string Summary
-    {
-        get
-        {
-            return Addend1 + " + " + Addend2 + " = " + Result;
-        }
-    }
+    public string Date { get; set; }
+    public int Time { get; set; }
+    public double Cost { get { return Time * 1.20; } }
+    public double LenghtRoute { get; set; }
+    public string StartPoint { get; set; }
+    public string FinishPoint { get; set; }
+
+
+    //public int Result
+    //{
+    //    get
+    //    {
+    //        return Addend1 + Addend2;
+    //    }
+    //}
+    //public string Summary
+    //{
+    //    get
+    //    {
+    //        return Addend1 + " + " + Addend2 + " = " + Result;
+    //    }
+    //}
     public event PropertyChangedEventHandler PropertyChanged;
 }
