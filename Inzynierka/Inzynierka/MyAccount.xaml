@@ -9,6 +9,7 @@
                     Clicked="OnRentHistoryButtonCLicked"/>
             <Button Text="Moje dane"
                     Clicked="OnMyDataButtonCLicked"/>
+            <Button Text="Pomoc techniczna"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

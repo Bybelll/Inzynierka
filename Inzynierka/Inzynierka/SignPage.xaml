@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Inzynierka.SignPage"
              x:Uid="SignPageContent"
-             x:Name="SignPageContent">
+             x:Name="SignPageContent"
+             Title="Logowanie">
              
     <ScrollView>
         <StackLayout Orientation="Vertical">

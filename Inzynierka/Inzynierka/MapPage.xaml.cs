@@ -28,7 +28,8 @@ namespace Inzynierka
 
         void OnMapClicked(object sender, MapClickedEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine($"MapClick: {e.Position.Latitude}, {e.Position.Longitude}");       
+            System.Diagnostics.Debug.WriteLine($"MapClick: {e.Position.Latitude}, {e.Position.Longitude}");
+
         }
 
         private void OnAddPinButtonClicked(object sender, EventArgs e)
@@ -61,7 +62,18 @@ namespace Inzynierka
 
         private void OnPodsumowanieClicked(object sender, EventArgs e)
         {
+            Navigation.PushAsync(new SummaryRent());
+        }
 
+        private void zakoncz(object sender, EventArgs e)
+        {
+            Title = "Wynajęty pojazd nr: 9";
+
+        }
+
+        private void OnHelpButtonClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SignPage());
         }
     }
 }
