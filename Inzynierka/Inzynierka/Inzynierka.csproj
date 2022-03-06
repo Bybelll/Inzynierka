@@ -18,22 +18,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="MapPage.xaml">
+    <EmbeddedResource Update="Map\MapPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MyAccount.xaml">
+    <EmbeddedResource Update="Account\MyAccount.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="RentHistory.xaml">
+    <EmbeddedResource Update="Account\RentHistory.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="SignPage.xaml">
+    <EmbeddedResource Update="Account\SignPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="SignUpPage.xaml">
+    <EmbeddedResource Update="Account\SignUpPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="SummaryRent.xaml">
+    <EmbeddedResource Update="Account\SummaryRent.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

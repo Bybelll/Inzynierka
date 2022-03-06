@@ -36,8 +36,5 @@ namespace Inzynierka.Component
             string address = possibleAddresses.FirstOrDefault();
             Label = address;
         }
-
-        
-
     }
 }
