@@ -25,19 +25,16 @@
             android:id="@+id/InfoWindowIDVehicle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nr pojazdu: "
             android:textColor="@android:color/black" />
         <TextView
             android:id="@+id/InfoWindowAdress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Adress:"
             android:textColor="@android:color/black" />
         <TextView
             android:id="@+id/InfoWindowCost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Opłata:"
             android:textColor="@android:color/black"/>
         
     </LinearLayout>
@@ -45,5 +42,6 @@
         android:id="@+id/InfoWindowButton"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:src="@drawable/rezerwuj" />
+        android:src="@drawable/rezerwuj" 
+        android:onClick="rentVehicle"/>
 </LinearLayout>

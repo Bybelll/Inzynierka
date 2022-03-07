@@ -18,9 +18,7 @@ namespace Inzynierka.Droid
     {
         List<Vehicle> vehicles;
 
-        public CustomMapRenderer(Context context) : base(context)
-        {
-        }
+        public CustomMapRenderer(Context context) : base(context) {}
 
         protected override void OnElementChanged(Xamarin.Forms.Platform.Android.ElementChangedEventArgs<Map> e)
         {
@@ -52,27 +50,19 @@ namespace Inzynierka.Droid
             marker.SetPosition(new LatLng(pin.Position.Latitude, pin.Position.Longitude));
             marker.SetTitle(pin.Label);
             marker.SetSnippet(pin.Address);
-            //marker.SetIcon(BitmapDescriptorFactory.FromResource(Resource.Drawable.pin));
             return marker;
         }
+
 
         void OnInfoWindowClick(object sender, GoogleMap.InfoWindowClickEventArgs e)
         {
             var customPin = GetCustomPin(e.Marker);
             if (customPin == null)
             {
+                
                 throw new Exception("Custom pin not found");
             }
-
-            //if (!string.IsNullOrWhiteSpace(customPin.Url))
-            //{
-            //    var url = Android.Net.Uri.Parse(customPin.Url);
-            //    var intent = new Intent(Intent.ActionView, url);
-            //    intent.AddFlags(ActivityFlags.NewTask);
-            //    Android.App.Application.Context.StartActivity(intent);
-            //}
         }
-
         public Android.Views.View GetInfoContents(Marker marker)
         {
             var inflater = Android.App.Application.Context.GetSystemService(Context.LayoutInflaterService) as Android.Views.LayoutInflater;
@@ -101,20 +91,10 @@ namespace Inzynierka.Droid
                     view = inflater.Inflate(Resource.Layout.MapInfoWindow, null);
                 }
                 var infoAdress = view.FindViewById<TextView>(Resource.Id.InfoWindowAdress);
-                //var infoTitle = view.FindViewById<TextView>(Resource.Id.InfoWindowTitle);
-                //var infoSubtitle = view.FindViewById<TextView>(Resource.Id.InfoWindowSubtitle);
 
                 view.FindViewById<TextView>(Resource.Id.InfoWindowCost).Text = "Opłata: " + customPin.cost + " zł/min";
                 view.FindViewById<TextView>(Resource.Id.InfoWindowIDVehicle).Text = "Nr pojazdu: " + customPin.id.ToString();
                 infoAdress.Text = "Adres: " + marker.Title;
-                //if (infoTitle != null)
-                //{
-                //    infoTitle.Text = marker.Title;
-                //}
-                //if (infoSubtitle != null)
-                //{
-                //    infoSubtitle.Text = marker.Snippet;
-                //}
 
                 return view;
             }
@@ -138,5 +118,7 @@ namespace Inzynierka.Droid
             }
             return null;
         }
+
+    
     }
 }

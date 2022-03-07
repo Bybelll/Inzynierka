@@ -9,7 +9,7 @@
     <ScrollView>
         <StackLayout Orientation="Vertical">
             <Entry  x:Name="LoginEntry"
-                    Placeholder="Login"/>
+                    Placeholder="Adres email"/>
             <Entry x:Name="PasswordEntry"
                    Placeholder="Hasło"
                    IsPassword="True"/>

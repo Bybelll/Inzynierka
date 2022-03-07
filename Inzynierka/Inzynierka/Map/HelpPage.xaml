@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inzynierka.HelpPage"
+             Title="Pomoc">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Margin="10">
+            <Label FontAttributes="Bold" FontSize="Medium"
+                Text="Kontakt:  "/>
+            <Label FontAttributes="Bold"
+                   Text="email: aplikacja@inz.pl"/>
+            <Label FontAttributes="Bold"
+                   Text="Biuro Obsługi: 111 111 111"/>
+            <Label Text=" "/>
+            <Label FontAttributes="Bold" FontSize="Medium"
+                   Text="FAQ"/>
+            <Label FontAttributes="Bold"
+                Text="1. Czy jest możliwość wynajmu pojazdu bez zakładania konta?" />
+            <Label Text="Nie ma takiej możliwości."/>
+            <Label FontAttributes="Bold"
+                Text="2. Czy wymagane jest sprawdzenie pojazdu przed rozpoczęciem wynajmu? " />
+            <Label Text="Nie jest to wymagane, jednak wraz z rozpoczęciem wynajmu wszelkie ewentualne uszkodzenia zostają przypisane Tobie."/>
+            <Label FontAttributes="Bold"
+                Text="3. Jak naliczana jest należność za wynajem?" />
+            <Label Text="Każdy pojazd ma indywidulalną cenę za każdą rozpoczętą minutę wynajmu. Czas wynajmu określa stoper pojawiający się do pokonaniu wynajmu."/>
+            <Label FontAttributes="Bold"
+                Text="4. W jaki sposób zostanie pobrana opłata za korzystanie z pojazdu?" />
+            <Label Text="Po zakończneniu wynajmu, czyli po kliknięciu w przycisk 'Zakończ' zostanie wyświetlone podsumowanie najmu i tam znajduję się przycisk zapłać,
+                   który odsyła do zewnętrznego systemu płatności."/>
+            <Label FontAttributes="Bold"
+                Text="5. Uszkodziłem pojazd, co mam zrobić?  " />
+            <Label Text="Jeśli spowodowałeś wypadek lub uszkodziłeś pojazd, skontaktuj się niezwłocznie z naszą całodobową infolinią. Numer naszej infolinii to 111 111 111. "/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Inzynierka.SignUpPage">
+             x:Class="Inzynierka.SignUpPage"
+             Title="Rejestracja">
     <ScrollView>
         <StackLayout>
-            <Entry x:Name="loginEntry" Placeholder="Login"/>
+            <Entry x:Name="loginEntry" Placeholder="Adres email"/>
             <Entry x:Name="passwordEntry"   Placeholder="Hasło" IsPassword="True"/>
             <Entry x:Name="repeatPasswordEntry" Placeholder="Powtórz hasło" IsPassword="True"/>
             <Entry x:Name="nameEntry" Placeholder="Imię"/>
@@ -18,7 +19,7 @@
 
             <Button Text="Załóż konto"                   
                     Clicked="OnSignUpButtonClicked"/>
-            <Label x:Name="passwordIncorectLabel"/>
+            <Label x:Name="errorLabel"/>
         </StackLayout>
 
     </ScrollView>

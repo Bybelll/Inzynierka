@@ -65,15 +65,45 @@ namespace Inzynierka
             Navigation.PushAsync(new SummaryRent());
         }
 
-        private void zakoncz(object sender, EventArgs e)
+        private void FinishRent(object sender, EventArgs e)
         {
-            Title = "Wynajęty pojazd nr: 9";
-
+            Navigation.PushAsync(new SummaryRent());
+            
         }
 
         private void OnHelpButtonClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SignPage());
+            Navigation.PushAsync(new HelpPage());
         }
     }
 }
+
+
+//public void RentVehicle()
+//{
+//    timer.start();
+//    Application.Current.Properties["rentalTime"] = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+//    Application.Current.Properties["startPosition"] = vehicle.Position;
+//    RentTimeStackLayout.IsVisible = true;
+//}
+
+
+//public void FinishRent()
+//{
+
+//    timer.stop();
+//    RentTimeStackLayout.IsVisible = false;
+//    int rentTime = timer.getRentalTime();
+//    int usersID = Application.Current.Properties["usersID"] as int;
+//    DateTime rentalTime = Application.Current.Properties["rentalTime"] as DateTime;
+//    Position startPosition = Application.Current.Properties["startPosition"] as Position;
+//    double cost = CalculateCost(rentTime, vehicle.cost);
+
+//    dbConnect.InsertRental(NULL, users.ID, vehicle.ID, rentalTime, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+//        startPosition.latitude, startPosition.longitude, vehicle.Position.latitude, vehicle.Position.longitude, cost, rentTime);
+
+//    Navigation.PushAsync(new SummaryRent(vehicle.ID, vehicle.Type, vehicle.Cost, rentTime,));
+
+//}
+
+

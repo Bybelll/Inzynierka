@@ -6,34 +6,40 @@
     <ContentPage.Content>
         <Grid VerticalOptions="Center">
 
-            <Label Grid.Row="0" Grid.Column="0"
+            <Label Margin="5,0,0,0"
+                    Grid.Row="0" Grid.Column="0"
                    Text="Nr pojazdu: " FontAttributes="Bold"/>
             <Label Grid.Row="0" Grid.Column="1"
                    Text="9"/>
-            
-            <Label Grid.Row="1" Grid.Column="0"
+
+            <Label Margin="5,0,0,0"
+                    Grid.Row="1" Grid.Column="0"
                    Text="Rodzaj pojazdu " FontAttributes="Bold"/>
             <Label Grid.Row="1" Grid.Column="1"
                    Text="Rower"/>
-            
-            <Label Grid.Row="2" Grid.Column="0"
-               Text="Długość trasy: " FontAttributes="Bold"/>
+
+            <Label Margin="5,0,0,0"
+                Grid.Row="2" Grid.Column="0"
+               Text="Czas przejazdu: " FontAttributes="Bold"/>
             <Label Grid.Row="2" Grid.Column="1"
-                   Text="2.88 km"/>
-            
-            <Label Grid.Row="3" Grid.Column="0"
-                   Text="Cena za km: " FontAttributes="Bold"/>
+                   Text="24 min"/>
+
+            <Label Margin="5,0,0,0"
+                Grid.Row="3" Grid.Column="0"
+                   Text="Cena za min: " FontAttributes="Bold"/>
             <Label Grid.Row="3" Grid.Column="1"
                    Text="1.22"/>
-            
-            <Label Grid.Row="4" Grid.Column="0"
+
+            <Label Margin="5,0,0,0"
+                Grid.Row="4" Grid.Column="0"
                    Text="Do zapłaty" FontAttributes="Bold"/>
             <Label Grid.Row="4" Grid.Column="1"
-                   Text="12412414"/>
+                   Text="29.28 zł"/>
             
             <StackLayout Grid.Row="5" Grid.ColumnSpan="2">
                 <Button Text="Zapłać"/>
             </StackLayout>
+
 
 
 

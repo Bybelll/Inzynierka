@@ -1,7 +1,9 @@
 ﻿using MySqlConnector;
 using System;
+using System.Text;
 using System.Collections.Generic;
 using Inzynierka.Component;
+using System.Security.Cryptography;
 
 namespace Inzynierka
 {
@@ -15,7 +17,7 @@ namespace Inzynierka
             Initialize();
         }
 
-        //Initialize values
+       
         private void Initialize()
         {
 
@@ -25,14 +27,11 @@ namespace Inzynierka
                 UserID = "bybell",
                 Password = "ZAQ!2wsx",
                 Database = "inzynierka",
-
             };
 
             try
             {
-                // open a connection asynchronously
-                connection = new MySqlConnection(builder.ConnectionString);
-                
+                connection = new MySqlConnection(builder.ConnectionString);                
             }
             catch (Exception ex)
             {
@@ -40,7 +39,6 @@ namespace Inzynierka
             }
         }
 
-        //open connection to database
         public bool OpenConnection()
         {
             try
@@ -50,11 +48,6 @@ namespace Inzynierka
             }
             catch (MySqlException ex)
             {
-                //When handling errors, you can your application's response based 
-                //on the error number.
-                //The two most common error numbers when connecting are as follows:
-                //0: Cannot connect to server.
-                //1045: Invalid user name and/or password.
                 switch (ex.Number)
                 {
                     case 0:
@@ -69,7 +62,6 @@ namespace Inzynierka
             }
         }
 
-        //Close connection
         private bool CloseConnection()
         {
             try
@@ -84,10 +76,26 @@ namespace Inzynierka
             }
         }
 
-        public void InsertUsers(string name,string surname,int age,byte status,string login,string password)
+        private string GetHash(string input)
         {
+            SHA256 sha256Hash = SHA256.Create();
+            byte[] data = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+
+            var sBuilder = new StringBuilder();
+
+            for (int i = 0; i < data.Length; i++)
+            {
+                sBuilder.Append(data[i].ToString("x2"));
+            }
+
+            return sBuilder.ToString();
+        }
+
+        public bool InsertUsers(string name,string surname,int age,byte status,string login,string password)
+        {
+            string passwordHashed = GetHash(password);
             string query = "INSERT INTO Users (ID,Name,Surname,Age,Status,Login,Password) VALUES" +
-                "(NULL,'"+name+"','"+surname+"','"+age+"','"+status+"','"+login+"','"+password+"')";
+                "(NULL,'"+name+"','"+surname+"','"+age+"','"+status+"','"+login+"','"+passwordHashed+"')";
 
             //open connection
             if (this.OpenConnection() == true)
@@ -100,7 +108,9 @@ namespace Inzynierka
 
                 //close connection
                 this.CloseConnection();
+                return true;
             }
+            else { return false; }
         }
 
         public void InsertVehicles(string type,double cost,byte availability,byte damage,double latitude, double longitude)
@@ -125,7 +135,7 @@ namespace Inzynierka
         public void InsertRental(int usersID, int vehiclesID, string rentalTime,string returnTime, double startPointLatitude,double startPointLonditude, double finishPointLatitude, double finishPointLongitude, double totalCost )
         {
             //for RentalTime and Return time use function DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
-
+            
             string query = "INSERT INTO Rental (ID, UsersID, VehiclesID, RentalTime, ReturnTime, StartingPointLatitute, StartingPointLongitute, FinishPointLatitute, FinishPointLongitute, TotalCost ) VALUES" +
               "(NULL,'" + usersID + "','" + vehiclesID + "','" + rentalTime + "','" + returnTime + "','" + startPointLatitude + "','" + startPointLonditude + "','" + finishPointLatitude + "','" + finishPointLongitude + "','" + totalCost+"')";
 

@@ -27,24 +27,13 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        
 
-        
-        <local:CustomMap x:Name="map"
-                  MapClicked="OnMapClicked"
-                  ItemsSource="{Binding Locations}">
-            <!-- Alternatively, set ItemTemplateSelector to MapItemTemplateSelector -->
-            <!--<local:CustomMap.ItemTemplate>
-                <DataTemplate>
-                    <local:Vehicle Position="{Binding Position}"
-                              Address="{Binding Address}"
-                              Label="{Binding Description}"/>
-                </DataTemplate>
-            </local:CustomMap.ItemTemplate>-->
-            
-        </local:CustomMap>
 
-        <StackLayout Grid.Row="1"
+
+        <local:CustomMap x:Name="map"/>
+
+        <StackLayout x:Name="RentTimeStackLayout"
+                     Grid.Row="1"
                      Orientation="Horizontal"
                      HorizontalOptions="Center"
                      IsVisible="false">
@@ -53,7 +42,7 @@
                    VerticalOptions="Center"
                    HorizontalOptions="Center"/>
             <Button Text="Zakończ"
-                    Clicked="zakoncz"/>
+                    />
         </StackLayout>
 
         <ScrollView Grid.Row="2"
@@ -64,19 +53,16 @@
                         Clicked="OnChangeModeClicked" />
                 <Button Text="Dodaj znacznik"
                         Clicked="OnAddPinButtonClicked" 
-                        IsVisible="true"/>
+                        IsVisible="false"/>
                 <Button Text="Moje konto"
                         Clicked="OnMyAccountButtonClicked"
                         IsVisible="true"/>
-
-                <!--<Button Text="Usuń znacznik"
-                        Command="{Binding RemoveLocationCommand}" />-->
                 <Button Text="Zaloguj"
                         Clicked="OnSingInButtonClicked"
                         IsVisible="true"/>
                 <Button Text="Podsumowanie"
                         Clicked="OnPodsumowanieClicked"
-                        IsVisible="true"/>
+                        IsVisible="false"/>
 
 
             </StackLayout>

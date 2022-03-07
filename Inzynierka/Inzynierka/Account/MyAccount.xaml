@@ -9,7 +9,9 @@
                     Clicked="OnRentHistoryButtonCLicked"/>
             <Button Text="Moje dane"
                     Clicked="OnMyDataButtonCLicked"/>
+            <Button Text="Zgłoszenie awarii"/>
             <Button Text="Pomoc techniczna"/>
+            <Button Text="Wyloguj"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

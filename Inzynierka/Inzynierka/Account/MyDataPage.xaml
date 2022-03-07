@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inzynierka.MyDataPage"
+             Title="Moje dane">
+    
+    <ContentPage.Content>
+        <Grid VerticalOptions="Center">
+
+            <Label Margin="5,0,0,0"
+                    Grid.Row="0" Grid.Column="0"
+                   Text="Imię: " FontAttributes="Bold" FontSize="Medium"/>
+            <Label Grid.Row="0" Grid.Column="1" 
+                   Text="Tomek" FontSize="Medium"/>
+
+            <Label Margin="5,0,0,0"
+                    Grid.Row="1" Grid.Column="0"
+                   Text="Nazwisko: " FontAttributes="Bold" FontSize="Medium"/>
+            <Label Grid.Row="1" Grid.Column="1"
+                   Text="Kowalski" FontSize="Medium"/>
+
+            <Label Margin="5,0,0,0"
+                Grid.Row="2" Grid.Column="0"
+               Text="Wiek: " FontAttributes="Bold" FontSize="Medium"/>
+            <Label Grid.Row="2" Grid.Column="1"
+                   Text="22" FontSize="Medium"/>
+
+            <Label Margin="5,0,0,0"
+                Grid.Row="3" Grid.Column="0"
+                   Text="Login: " FontAttributes="Bold" FontSize="Medium"/>
+            <Label Grid.Row="3" Grid.Column="1"
+                   Text="tomcio21" FontSize="Medium"/>
+            <Button Grid.Row="0" Grid.Column="2"
+                    Text="Zmień"/>
+
+            <Label Margin="5,0,0,0"
+                Grid.Row="4" Grid.Column="0"
+                   Text="Hasło:" FontAttributes="Bold" FontSize="Medium"/>
+            <Button Grid.Row="4" Grid.Column="2"
+                   Text="Zmień hasło"/>
+
+
+
+
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -5,24 +5,16 @@
              Title="Dane znacznika">
     <ScrollView>
 	   <StackLayout Margin="10">
-		    <Label Text="Wpisz adres" />
-		    <Entry x:Name="geocodeEntry" Placeholder="Gdańsk, ul. Kartuska 3" />
-		    <Button Text="Konwertuj na współrzędne" Clicked="OnGeocodeButtonClicked" />
-		    <Label x:Name="geocodedOutputLabel" />
-		    <Label Text="Wpisz współrzędne:" />
-            <Entry x:Name="reverseGeocodeEntry" Placeholder="54.3520500, 18.6463700" />
-		    <Button Text="Pokaż adres" Clicked="OnReverseGeocodeButtonClicked" />
-		    <Label x:Name="reverseGeocodedOutputLabel" />
 
-            <Entry x:Name="typeVehicle" Placeholder="typ pojazdu" />
-            <Entry x:Name="costVehicle" Placeholder="koszt" />
-            <Entry x:Name="availabilityVehicle" Placeholder="dostepnosc" />
-            <Entry x:Name="damageVehicle" Placeholder="uszkodzony" />
-            <Entry x:Name="latitudeVehicle" Placeholder="szerokość geogr" />
-            <Entry x:Name="longitudeVehicle" Placeholder="gługość geogr" />
+            <Entry x:Name="typeVehicle" Placeholder="Typ pojazdu" />
+            <Entry x:Name="costVehicle" Placeholder="Koszt" />
+            <Entry x:Name="availabilityVehicle" Placeholder="Dostepność" />
+            <Entry x:Name="damageVehicle" Placeholder="Uszkodzony" />
+            <Entry x:Name="latitudeVehicle" Placeholder="Szerokość geograficzna" />
+            <Entry x:Name="longitudeVehicle" Placeholder="Długość geograficzna" />
 
-            <Entry x:Name="describeEntry" Placeholder="Wpisz opis" />
-            <Button Text="Dodaj znacznik" Clicked="AddPin"/>
+            <Entry x:Name="describeEntry" Placeholder="Opis" />
+            <Button Text="Dodaj znacznik" Clicked="AddVehicle"/>
         </StackLayout>
     </ScrollView>
     

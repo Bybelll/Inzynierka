@@ -24,7 +24,7 @@ namespace Inzynierka
 
         private void OnMyDataButtonCLicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new MyDataPage());
         }
     }
 }

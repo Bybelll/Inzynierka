@@ -22,44 +22,44 @@ namespace Inzynierka
             geoCoder = new Geocoder();
         }
 
-        async void OnGeocodeButtonClicked(object sender, EventArgs e)
+        //async void OnGeocodeButtonClicked(object sender, EventArgs e)
+        //{
+        //    if (!string.IsNullOrWhiteSpace(geocodeEntry.Text))
+        //    {
+        //        address = geocodeEntry.Text;
+        //        IEnumerable<Position> approximateLocations = await geoCoder.GetPositionsForAddressAsync(address);
+        //        Position position = approximateLocations.FirstOrDefault();
+        //        geocodedOutputLabel.Text = $"{position.Latitude}, {position.Longitude}";
+
+        //        pinPosition = position;
+        //    }
+        //}
+
+        //async void OnReverseGeocodeButtonClicked(object sender, EventArgs e)
+        //{
+        //    if (!string.IsNullOrWhiteSpace(reverseGeocodeEntry.Text))
+        //    {
+        //        string[] coordinates = reverseGeocodeEntry.Text.Split(',');
+        //        double? latitude = Convert.ToDouble(coordinates.FirstOrDefault());
+        //        double? longitude = Convert.ToDouble(coordinates.Skip(1).FirstOrDefault());
+
+        //        if (latitude != null && longitude != null)
+        //        {
+        //            Position position = new Position(latitude.Value, longitude.Value);
+        //            IEnumerable<string> possibleAddresses = await geoCoder.GetAddressesForPositionAsync(position);
+        //            address = possibleAddresses.FirstOrDefault();
+        //            reverseGeocodedOutputLabel.Text = address;
+
+        //            pinPosition = position;
+        //        }
+        //    }
+        //}
+
+        private void AddVehicle(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(geocodeEntry.Text))
-            {
-                address = geocodeEntry.Text;
-                IEnumerable<Position> approximateLocations = await geoCoder.GetPositionsForAddressAsync(address);
-                Position position = approximateLocations.FirstOrDefault();
-                geocodedOutputLabel.Text = $"{position.Latitude}, {position.Longitude}";
-
-                pinPosition = position;
-            }
-        }
-
-        async void OnReverseGeocodeButtonClicked(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(reverseGeocodeEntry.Text))
-            {
-                string[] coordinates = reverseGeocodeEntry.Text.Split(',');
-                double? latitude = Convert.ToDouble(coordinates.FirstOrDefault());
-                double? longitude = Convert.ToDouble(coordinates.Skip(1).FirstOrDefault());
-
-                if (latitude != null && longitude != null)
-                {
-                    Position position = new Position(latitude.Value, longitude.Value);
-                    IEnumerable<string> possibleAddresses = await geoCoder.GetAddressesForPositionAsync(position);
-                    address = possibleAddresses.FirstOrDefault();
-                    reverseGeocodedOutputLabel.Text = address;
-
-                    pinPosition = position;
-                }
-            }
-        }
-
-        private void AddPin(object sender, EventArgs e)
-        {
-            //TO DO warunki i sprawdzenia
-            if (!string.IsNullOrWhiteSpace(describeEntry.Text) && !string.IsNullOrWhiteSpace(typeVehicle.Text) && !string.IsNullOrWhiteSpace(costVehicle.Text)
-                && !string.IsNullOrWhiteSpace(availabilityVehicle.Text))
+            if (!string.IsNullOrWhiteSpace(describeEntry.Text) && !string.IsNullOrWhiteSpace(typeVehicle.Text) 
+                && !string.IsNullOrWhiteSpace(costVehicle.Text) && !string.IsNullOrWhiteSpace(latitudeVehicle.Text) 
+                && !string.IsNullOrWhiteSpace(longitudeVehicle.Text))
             {
                 double? cost = Convert.ToDouble(costVehicle.Text);
                 byte? availability = Convert.ToByte(damageVehicle.Text);
@@ -68,11 +68,14 @@ namespace Inzynierka
                 double? longitude = Convert.ToDouble(longitudeVehicle.Text);
 
                 DBConnect dBConnect = new DBConnect();
-                dBConnect.InsertVehicles(typeVehicle.Text, cost.Value, availability.Value, damage.Value, latitude.Value, longitude.Value);
+                dBConnect.InsertVehicles(typeVehicle.Text, cost.Value, availability.Value, 
+                    damage.Value, latitude.Value, longitude.Value);
             }
 
             Navigation.PopAsync();
 
         }
+
+
     }
 }
